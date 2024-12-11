@@ -52,6 +52,7 @@ require("catppuccin").setup({
     dark = "mocha",
   },
   transparent_background = true, -- disables setting the background color.
+  transparent = true,
   show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
   term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
   dim_inactive = {
@@ -93,8 +94,6 @@ require("catppuccin").setup({
   },
 })
 
--- setup must be called before loading
--- vim.cmd.colorscheme "catppuccin"
 --
 require("tokyonight").setup({
   -- your configuration comes here

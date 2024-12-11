@@ -1,7 +1,7 @@
 return {
   {
     "rcarriga/nvim-notify",
-    enabled = true,
+    enabled = false,
     opts = {
       on_open = function(win)
         local config = vim.api.nvim_win_get_config(win)
@@ -112,19 +112,14 @@ return {
         transparent = true,
         italic_comments = true,
         hide_fillchars = true,
+        terminal_colors = true,
         borderless_telescope = false,
-        theme = {
-          colors = {
-            -- For a list of colors see `lua/cyberdream/colours.lua`
-            green = "#fae41b",
-            white = "#e1f5eb",
-            blue = "#5cfff7",
-            orange = "#ff6666",
-            fg = "#00ff80",
-          },
-        },
       })
     end,
+  },
+
+  {
+    "hashivim/vim-terraform",
   },
 
   -- {
@@ -141,7 +136,7 @@ return {
     event = "LazyFile",
     dependencies = {
       { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
-      { "folke/neodev.nvim", opts = {} },
+      -- { "folke/neodev.nvim", opts = {} },
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
     },
@@ -153,9 +148,7 @@ return {
         pyright = {},
       },
       setup = {
-        -- ... (existing setup)
         ["*"] = function(server, opts)
-          -- Additional setup for specific servers
           if server == "gopls" then
             opts.settings = {
               gopls = {
@@ -168,11 +161,11 @@ return {
           elseif server == "terraformls" then
             opts.settings = {
               terraform = {
-                --                format = {
-                --                  command = "terraform",
-                --                  args = { "fmt", "-" },
-                --                  rootMarkers = { ".terraform", "terraform.hcl" },
-                --              },
+                format = {
+                  command = "terraform",
+                  args = { "fmt", "-" },
+                  rootMarkers = { ".terraform", "terraform.hcl" },
+                },
               },
               filetypes = { "terraform" },
             }

@@ -7,8 +7,6 @@ local opts = { noremap = true, silent = true }
 -- Split window
 keymap.set("n", "ws", ":vsplit<Return>", opts)
 
--- vim.api.nvim_set_keymap
-
 -- this will prevent the lines deleted with 'd' key from being copied to clipboard
 keymap.set("n", "d", '"_d', opts)
 keymap.set("v", "d", '"_d', opts)
