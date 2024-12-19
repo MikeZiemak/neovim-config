@@ -11,7 +11,7 @@ return {
         borderless_telescope = false,
         terminal_colors = true,
       })
-      vim.cmd("colorscheme cyberdream")
+      vim.cmd("colorscheme gruvbox")
     end,
   },
   {
