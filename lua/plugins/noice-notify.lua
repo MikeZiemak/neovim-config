@@ -16,4 +16,14 @@ return {
       words = { enabled = true },
     },
   },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    require("noice").setup({
+      presets = {
+        lsp_doc_border = true,
+        command_palette = true,
+      },
+    }),
+  },
 }
